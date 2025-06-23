@@ -1,0 +1,27 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "nextjs",
+  "functions": {
+    "app/api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_ADMIN_USERNAME": "admin",
+    "NEXT_PUBLIC_ADMIN_PASSWORD": "manshu@123"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_ADMIN_USERNAME": "admin",
+      "NEXT_PUBLIC_ADMIN_PASSWORD": "manshu@123"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/admin/:path*",
+      "destination": "/admin/index.html"
+    }
+  ]
+}
